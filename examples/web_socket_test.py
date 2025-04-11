@@ -1,6 +1,6 @@
-from TradingAPI.mticker import *
-from TradingAPI.mconnect import *
-from TradingAPI import __config__
+from tradingapi_b.mticker import *
+from tradingapi_b.mconnect import *
+from tradingapi_b import __config__
 
 # Create and configure logger
 logging.basicConfig(filename="miraesdk_typeB_socket.log",

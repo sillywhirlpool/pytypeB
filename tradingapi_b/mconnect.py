@@ -1,8 +1,8 @@
 import logging
 import requests
 import sys,traceback
-import TradingAPI.exceptions as ex
-from TradingAPI import __config__
+import tradingapi_b.exceptions as ex
+from tradingapi_b import __config__
 from urllib.parse import urljoin
 
 default_log = logging.getLogger("mconnect.log")

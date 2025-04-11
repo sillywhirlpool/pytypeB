@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 parent_dir=os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(parent_dir)
 from helpers import utils
-import TradingAPI.exceptions as ex
+import tradingapi_b.exceptions as ex
 
 @responses.activate
 def test_place_order(mconnectB):
