@@ -391,16 +391,24 @@ class MConnectB:
             else:
                 self.logger.debug("Request: {method} {url} {data} {headers}".format(method=method, url=url, data=params, headers=headers))
         
+        
+        
+        ''''removed
+Why? So the JSON body isn’t overwritten by URL query parameters.'''
         # prepare url query params
-        if method in ["GET", "DELETE"]:
-            query_params = params
+        # if method in ["GET", "DELETE"]:
+        #     query_params = params
 
         try:
             response_data = self.request_session.request(method,
                                         url,
-                                        json=params if (method in ["POST", "PUT"] and is_json) else None,
-                                        data=params if (method in ["POST", "PUT"] and not is_json) else None,
-                                        params=query_params,
+                                        # json=params if (method in ["POST", "PUT"] and is_json) else None,
+                                        # data=params if (method in ["POST", "PUT"] and not is_json) else None,
+                                        # params=query_params,
+                                        # headers=headers,
+                                        # verify=not self.disable_ssl,
+                                        
+                                        json=params if is_json else None,  # Use 'json' parameter regardless of method
                                         headers=headers,
                                         verify=not self.disable_ssl,
                                         allow_redirects=True,
